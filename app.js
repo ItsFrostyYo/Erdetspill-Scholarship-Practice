@@ -86,6 +86,7 @@ const UI_TEXT = {
     anyNumber: "any number",
     chooseOne: "choose one",
     amount: "Amount",
+    explanations: "Explinations",
     normalHeading: "Normal Cheatsheet",
     advancedHeading: "Advanced Cheatsheet",
     currentSide: "Currently on the",
@@ -113,6 +114,7 @@ const UI_TEXT = {
     anyNumber: "vilkårlig tall",
     chooseOne: "velg én",
     amount: "Antall",
+    explanations: "Forklaringer",
     normalHeading: "Normal jukselapp",
     advancedHeading: "Avansert jukselapp",
     currentSide: "Nå på",
@@ -160,6 +162,7 @@ const letterLegend = document.querySelector("#letter-legend");
 const numberLegend = document.querySelector("#number-legend");
 const choiceLegend = document.querySelector("#choice-legend");
 const amountLegend = document.querySelector("#amount-legend");
+const parenthesesLegend = document.querySelector("#parentheses-legend");
 const rejectionOverlay = document.querySelector("#rejection");
 const rejectionReason = document.querySelector("#rejection-reason");
 const rejectionExtra = document.querySelector("#rejection-extra");
@@ -184,6 +187,9 @@ function renderCheatsheet() {
   const rows = advanced ? ADVANCED_CHEATSHEET : NORMAL_CHEATSHEET;
   const text = UI_TEXT[languageSelect.value];
   cheatsheetHeading.textContent = advanced ? text.advancedHeading : text.normalHeading;
+  amountLegend.textContent = advanced ? text.amount : text.explanations;
+  parenthesesLegend.classList.toggle("amount", advanced);
+  parenthesesLegend.classList.toggle("explanation", !advanced);
   cheatsheetRows.replaceChildren();
 
   for (const row of rows) {
@@ -232,7 +238,6 @@ function applyLanguage() {
   letterLegend.textContent = text.anyLetter;
   numberLegend.textContent = text.anyNumber;
   choiceLegend.textContent = text.chooseOne;
-  amountLegend.textContent = text.amount;
   switchSidesButton.setAttribute(
     "aria-label",
     `${text.switchSides}. ${text.currentSide} ${text.sides[cheatsheetSide]}.`

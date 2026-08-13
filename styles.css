@@ -484,6 +484,7 @@ button:disabled {
 .number { color: #00d66b; }
 .choice { color: #159cff; }
 .amount { color: #ff9f1a; }
+.explanation { color: #a9a9ad; }
 .player { color: #ff202b; }
 
 .cheatsheet-rows {
