@@ -112,6 +112,33 @@ select {
   cursor: pointer;
 }
 
+.site-navigation .external-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  background: #29292e;
+  border: 1px solid #59595f;
+  border-radius: 4px;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.site-navigation .external-link:hover,
+.site-navigation .external-link:focus-visible {
+  background: #3a3a40;
+  border-color: #85858c;
+  outline: none;
+}
+
+.site-navigation .external-link img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 .workspace {
   display: flex;
   align-items: flex-start;
