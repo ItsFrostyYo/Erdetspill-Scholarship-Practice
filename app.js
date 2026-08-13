@@ -86,7 +86,7 @@ const UI_TEXT = {
     anyNumber: "any number",
     chooseOne: "choose one",
     amount: "Amount",
-    explanations: "Explinations",
+    explanations: "Explanations",
     normalHeading: "Normal Cheatsheet",
     advancedHeading: "Advanced Cheatsheet",
     currentSide: "Currently on the",
