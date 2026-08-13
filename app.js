@@ -52,16 +52,16 @@ const NORMAL_CHEATSHEET = [
 const ADVANCED_CHEATSHEET = [
   { prompt: "brød =", parts: [["letter", "x"]] },
   { prompt: "bilmerke =", parts: [["letter", "x"]] },
-  { prompt: "sagt? =", parts: [["plain", "(3)"], ["letter", "x"]] },
-  { prompt: "mandag =", parts: [["plain", "(3)"], ["letter", "x"]] },
-  { prompt: "penger? =", parts: [["plain", "(3)"], ["letter", "x"]] },
-  { prompt: "her? =", parts: [["plain", "(5)"], ["letter", "x"]] },
+  { prompt: "sagt? =", parts: [["amount", "(3)"], ["letter", "x"]] },
+  { prompt: "mandag =", parts: [["amount", "(3)"], ["letter", "x"]] },
+  { prompt: "penger? =", parts: [["amount", "(3)"], ["letter", "x"]] },
+  { prompt: "her? =", parts: [["amount", "(5)"], ["letter", "x"]] },
   { prompt: "Spillernavn =", parts: [["player", ""]] },
   { prompt: "E-postadresse =", parts: [["letter", "x"], ["plain", "@"], ["letter", "x"], ["plain", "."], ["letter", "x"]] },
   { prompt: "Adresse =", parts: [["letter", "x"], ["plain", " + "], ["number", "0"]] },
-  { prompt: "Postnummer =", parts: [["plain", "(4)"], ["number", "0"]] },
-  { prompt: "Telefonnummer =", parts: [["plain", "(8)"], ["number", "0"]] },
-  { prompt: "Fødselsdato =", parts: [["number", "00.00."], ["plain", "(4)"], ["number", "0"]] },
+  { prompt: "Postnummer =", parts: [["amount", "(4)"], ["number", "0"]] },
+  { prompt: "Telefonnummer =", parts: [["amount", "(8)"], ["number", "0"]] },
+  { prompt: "Fødselsdato =", parts: [["number", "00.00."], ["amount", "(4)"], ["number", "0"]] },
   { prompt: "uken =", parts: [["number", "0"]] },
   { prompt: "valg? =", parts: [["plain", "ja"]] },
   { prompt: "stipendet? =", parts: [["plain", "ja"]] },
@@ -85,6 +85,7 @@ const UI_TEXT = {
     anyLetter: "any letter",
     anyNumber: "any number",
     chooseOne: "choose one",
+    amount: "Amount",
     normalHeading: "Normal Cheatsheet",
     advancedHeading: "Advanced Cheatsheet",
     currentSide: "Currently on the",
@@ -111,6 +112,7 @@ const UI_TEXT = {
     anyLetter: "vilkårlig bokstav",
     anyNumber: "vilkårlig tall",
     chooseOne: "velg én",
+    amount: "Antall",
     normalHeading: "Normal jukselapp",
     advancedHeading: "Avansert jukselapp",
     currentSide: "Nå på",
@@ -157,6 +159,7 @@ const cheatsheetTitle = document.querySelector("#cheatsheet-title");
 const letterLegend = document.querySelector("#letter-legend");
 const numberLegend = document.querySelector("#number-legend");
 const choiceLegend = document.querySelector("#choice-legend");
+const amountLegend = document.querySelector("#amount-legend");
 const rejectionOverlay = document.querySelector("#rejection");
 const rejectionReason = document.querySelector("#rejection-reason");
 const rejectionExtra = document.querySelector("#rejection-extra");
@@ -229,6 +232,7 @@ function applyLanguage() {
   letterLegend.textContent = text.anyLetter;
   numberLegend.textContent = text.anyNumber;
   choiceLegend.textContent = text.chooseOne;
+  amountLegend.textContent = text.amount;
   switchSidesButton.setAttribute(
     "aria-label",
     `${text.switchSides}. ${text.currentSide} ${text.sides[cheatsheetSide]}.`
