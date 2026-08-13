@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111116">
+  <title>Erdetspill – Scholarship Practice</title>
+  <link rel="stylesheet" href="styles.css?v=20260813-3">
+</head>
+<body>
+  <main class="practice-shell">
+    <nav class="site-navigation" aria-label="Practice navigation">
+      <button id="minigame-tab" class="tab-button active" type="button" aria-current="page">Minigame Active</button>
+      <button id="toggle-cheatsheet" type="button" aria-pressed="false">Show Cheatsheet</button>
+      <button id="switch-sides" type="button" disabled>Switch Sides</button>
+      <label id="cheatsheet-type-label" class="type-label" for="cheatsheet-type">Cheatsheet Type</label>
+      <select id="cheatsheet-type">
+        <option id="normal-option" value="normal" selected>Normal</option>
+        <option id="advanced-option" value="advanced">Advanced</option>
+      </select>
+      <label id="language-label" class="language-label" for="language">Language</label>
+      <select id="language">
+        <option id="english-option" value="en" selected>English</option>
+        <option id="norwegian-option" value="no">Norwegian</option>
+      </select>
+    </nav>
+
+    <div id="workspace" class="workspace cheatsheet-right">
+      <div class="game-column">
+        <section class="practice-controls" aria-label="Practice settings">
+          <label id="player-name-label" for="player-name">Player Name</label>
+          <input id="player-name" type="text" value="a" maxlength="40" autocomplete="off">
+          <button id="new-round" type="button">Reset</button>
+        </section>
+
+        <section class="game-stage" aria-label="Stipendsøknad practice simulator">
+      <div class="dark-overlay"></div>
+      <form id="scholarship-form" class="form-panel" novalidate>
+        <div class="root-vbox">
+          <header class="header-row">
+            <h1>STIPENDSØKNAD</h1>
+            <span id="timer" class="timer">40s</span>
+          </header>
+
+          <div id="time-bar" class="time-bar" aria-hidden="true"><span></span></div>
+          <div class="separator"></div>
+
+          <div id="questions-scroll" class="questions-scroll">
+            <div id="questions" class="questions"></div>
+          </div>
+
+          <div class="separator"></div>
+          <label class="signature-label" for="signature">Signatur:</label>
+          <div id="signature-frame" class="signature-frame">
+            <canvas id="signature" aria-label="Tegn signaturen din her"></canvas>
+          </div>
+
+          <p id="error" class="error" role="alert"></p>
+
+          <div class="footer-row">
+            <button id="submit" class="submit" type="submit">Send inn søknad</button>
+            <button id="clear" class="clear" type="button">Tøm</button>
+          </div>
+          <p id="status" class="status" aria-live="polite"></p>
+        </div>
+
+        <div id="rejection" class="rejection-overlay" hidden>
+          <div class="rejection-dialog">
+            <h2>SØKNADEN ER AVVIST</h2>
+            <p id="rejection-reason"></p>
+            <p id="rejection-extra"></p>
+            <button id="rejection-ok" type="button">OK</button>
+          </div>
+        </div>
+      </form>
+
+      <div id="result" class="result-overlay" hidden>
+        <p id="result-label"></p>
+      </div>
+        </section>
+      </div>
+
+      <aside id="cheatsheet" class="cheatsheet" aria-label="Scholarship form cheatsheet" hidden>
+        <header class="cheatsheet-header">
+          <h2 id="cheatsheet-title">erdetspill scholarship office</h2>
+          <div class="legend" aria-label="Cheatsheet legend">
+            <span><b class="letter">x</b> = <span id="letter-legend">any letter</span></span>
+            <span><b class="number">0</b> = <span id="number-legend">any number</span></span>
+            <span><b class="choice">/</b> = <span id="choice-legend">choose one</span></span>
+          </div>
+        </header>
+        <h3 id="cheatsheet-heading">Normal Cheatsheet</h3>
+        <div id="cheatsheet-rows" class="cheatsheet-rows"></div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="app.js?v=20260813-3"></script>
+</body>
+</html>
