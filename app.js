@@ -204,7 +204,7 @@ function renderCheatsheet() {
     for (const [type, text] of row.parts) {
       const part = document.createElement("span");
       part.className = type;
-      part.textContent = type === "player" ? (playerNameInput.value.trim() || "a") : text;
+      part.textContent = type === "player" ? (playerNameInput.value.trim() || "aa") : text;
       answer.append(part);
     }
 

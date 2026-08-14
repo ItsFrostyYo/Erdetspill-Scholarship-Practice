@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#111116">
   <title>Erdetspill – Scholarship Practice</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="stylesheet" href="styles.css?v=20260813-7">
+  <link rel="stylesheet" href="styles.css?v=20260813-8">
 </head>
 <body>
   <main class="practice-shell">
@@ -36,7 +36,7 @@
       <div class="game-column">
         <section class="practice-controls" aria-label="Practice settings">
           <label id="player-name-label" for="player-name">Player Name</label>
-          <input id="player-name" type="text" value="a" maxlength="40" autocomplete="off">
+          <input id="player-name" type="text" value="aa" minlength="2" maxlength="40" autocomplete="off">
           <button id="new-round" type="button">Reset</button>
         </section>
 
@@ -99,10 +99,11 @@
         </header>
         <h3 id="cheatsheet-heading">Normal Cheatsheet</h3>
         <div id="cheatsheet-rows" class="cheatsheet-rows"></div>
+        <p class="cheatsheet-credit">Credit to <a href="https://www.speedrun.com/users/BimonMonmon" target="_blank" rel="noopener noreferrer">BimonMonmon</a></p>
       </aside>
     </div>
   </main>
 
-  <script src="app.js?v=20260813-6"></script>
+  <script src="app.js?v=20260813-8"></script>
 </body>
 </html>

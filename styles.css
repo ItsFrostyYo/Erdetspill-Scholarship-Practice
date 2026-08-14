@@ -544,6 +544,24 @@ button:disabled {
   font-weight: 600;
 }
 
+.cheatsheet-credit {
+  margin: 2.3em 0 0;
+  color: #a9a9ad;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cheatsheet-credit a {
+  color: #d0d0d0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cheatsheet-credit a:hover,
+.cheatsheet-credit a:focus-visible {
+  color: #fff;
+}
+
 @media (max-width: 623px) {
   body { padding: 8px; }
 }
